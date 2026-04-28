@@ -18,5 +18,9 @@
 - Attempted S3 access again
 - Access was denied
 
+ S3 Deny Policy Evidence
+ S3 Console Access After Deny Policy
+- User redirected to S3 home page with no buckets visible
+
 ## Step 6: Observe Result
 - Despite having allow permissions, access was blocked due to explicit deny
