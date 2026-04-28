@@ -23,3 +23,13 @@ Created custom policy:
     }
   ]
 }
+
+
+🔧 Step 3: Attach Policy
+Attached restricted policy to user
+
+
+🧪 Step 4: Re-Test Access
+S3 read allowed
+EC2 creation denied
+S3 upload denied
