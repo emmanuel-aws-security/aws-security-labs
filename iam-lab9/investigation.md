@@ -1,43 +1,125 @@
 # Investigation — Why Was Data Exposed?
 
 ## 🧠 Problem
-S3 object is accessible publicly without authentication.
+An S3 object was accessible publicly without authentication.
 
 ---
 
-## 🔍 Step 1: Policy Simulator
+## 🔍 Step 1: IAM Policy Simulation
 
-Tested:
-- Action: s3:GetObject
+Tested action:
+- s3:GetObject
 
 Result:
-- ❌ (from IAM user perspective)
+- ❌ Denied (from IAM user perspective)
 
-👉 But file was still accessible publicly
+Observation:
+- IAM policies did NOT grant access to the object
 
 ---
 
-## 🔍 Step 2: Check Resource Policy (S3 Bucket)
+## 🔍 Step 2: Public Access Verification
 
-- Found bucket policy allowing:
-  - Principal: "*"
-  - Action: s3:GetObject
+- Accessed object via direct URL (no login)
+- Object was successfully retrieved
+
+Observation:
+- Access was possible without IAM authentication
+
+---
+
+## 🔍 Step 3: S3 Bucket Policy Analysis
+
+Checked bucket policy in:
+👉 :contentReference[oaicite:0]{index=0}
+
+Findings:
+- Principal: "*"
+- Action: s3:GetObject
+- Effect: Allow
+
+Interpretation:
+- Policy allows ANY user (including anonymous/public users) to read objects
 
 ---
 
 ## 🔥 Root Cause
-Access was granted by bucket policy, not IAM user policy.
+Access was granted by the S3 bucket policy, not IAM identity-based policies.
 
 ---
 
 ## ⚠️ Key Insight
-IAM policies are not the only control layer.
 
-S3 bucket policies can:
-- grant access externally
-- bypass IAM user restrictions
+AWS evaluates access using multiple policy layers:
+- IAM policies (identity-based)
+- Resource policies (e.g. S3 bucket policies)
+
+Even if IAM denies access:
+- A resource policy can still grant public access
 
 ---
 
 ## 🧾 Conclusion
-Public exposure was caused by bucket-level permission, not IAM misconfiguration.
+The data exposure occurred due to a permissive bucket policy allowing public read access (`Principal: "*"`) rather than an IAM misconfiguration.# Investigation — Why Was Data Exposed?
+
+## 🧠 Problem
+An S3 object was accessible publicly without authentication.
+
+---
+
+## 🔍 Step 1: IAM Policy Simulation
+
+Tested action:
+- s3:GetObject
+
+Result:
+- ❌ Denied (from IAM user perspective)
+
+Observation:
+- IAM policies did NOT grant access to the object
+
+---
+
+## 🔍 Step 2: Public Access Verification
+
+- Accessed object via direct URL (no login)
+- Object was successfully retrieved
+
+Observation:
+- Access was possible without IAM authentication
+
+---
+
+## 🔍 Step 3: S3 Bucket Policy Analysis
+
+Checked bucket policy in:
+👉 :contentReference[oaicite:0]{index=0}
+
+Findings:
+- Principal: "*"
+- Action: s3:GetObject
+- Effect: Allow
+
+Interpretation:
+- Policy allows ANY user (including anonymous/public users) to read objects
+
+---
+
+## 🔥 Root Cause
+Access was granted by the S3 bucket policy, not IAM identity-based policies.
+
+---
+
+## ⚠️ Key Insight
+
+AWS evaluates access using multiple policy layers:
+- IAM policies (identity-based)
+- Resource policies (e.g. S3 bucket policies)
+
+Even if IAM denies access:
+- A resource policy can still grant public access
+
+---
+
+## 🧾 Conclusion
+The data exposure occurred due to a permissive bucket policy allowing public read access (`Principal: "*"`) rather than an IAM misconfiguration.
