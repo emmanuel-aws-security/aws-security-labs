@@ -17,5 +17,10 @@ Access to private instances should only happen through:
 - VPNs
 - Internal network routing
 
+  Instance has no public IP and cannot be reached from the internet, confirming network-level isolation
+
+
+  “Although the instance is not publicly reachable, it is not inherently secure. If another internal resource is compromised, this instance could still be accessed.”
+  
 ## 🧾 Final Conclusion
 Network design is as important as firewall rules. Public exposure should be intentional, not accidental.
