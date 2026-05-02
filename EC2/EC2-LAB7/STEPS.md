@@ -68,7 +68,7 @@
 - Deny port 80 (or don’t allow it)
 
 ### Step 3: Test Failure
-- curl localhost → works ✅
+- curl localhost → fails
 - browser → fails ❌
 
 ### Step 4: Diagnose
