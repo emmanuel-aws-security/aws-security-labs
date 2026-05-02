@@ -16,7 +16,7 @@
 - Remove port 80 from Security Group
 
 ### Test
-- curl localhost → works ✅
+- curl localhost → fails
 - curl PRIVATE-IP → works ✅
 - browser → fails ❌
 
