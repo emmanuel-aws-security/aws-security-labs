@@ -47,20 +47,8 @@
 - Start nginx:
   sudo systemctl start nginx
 
-----------------------------------
-## 🔹 SCENARIO 3 — Partial Confusion Check
-----------------------------------
 
-### Break It
-- Enable UFW without allowing port 80
 
-### Test
-- curl localhost → works ✅
-- browser → fails ❌
 
-### Conclusion
-- Internal works
-- External blocked → firewall issue
 
-### Fix
-- sudo ufw allow 80
+
