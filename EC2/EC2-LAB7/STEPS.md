@@ -12,7 +12,7 @@
 - Remove HTTP (port 80) from Security Group
 
 ### Step 3: Test Failure
-- curl http://localhost → still works ✅
+- curl http://localhost → doesn't work 
 - browser → fails ❌
 
 ### Step 4: Diagnose
