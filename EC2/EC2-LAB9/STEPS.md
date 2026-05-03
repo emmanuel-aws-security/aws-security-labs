@@ -65,25 +65,14 @@ sudo lsof -i :80
 - service using port 80
 
 ### Step 3: Test
-- nginx fails to start or bind ❌
+- apache2 fails to start or bind ❌
 
 ### Fix Option 1 — Kill process
 sudo kill -9 <PID>
 
 ### Fix Option 2 — Change nginx port
 - edit config file
-- restart nginx
+- restart apache2
 
-----------------------------------
-## 🔹 BREAK 4 — Permission Issue (Link to Case 4)
 
-### Step 1: Restrict file access
-- change ownership or permissions
 
-### Step 2: Check logs
-- nginx error.log shows:
-  permission denied
-
-### Fix
-- restore ownership:
-  sudo chown -R www-data:www-data /var/www/html
