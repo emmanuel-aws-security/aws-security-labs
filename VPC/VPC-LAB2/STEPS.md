@@ -33,7 +33,7 @@ Test:
 ----------------------------------
 
 Run:
-curl http://google.com
+ssh into server
 
 Result:
 - fails ❌
