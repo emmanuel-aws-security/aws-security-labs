@@ -30,7 +30,7 @@ OR
 - Resource Name
 
 Example:
-DeleteObject
+PutObject
 
 ----------------------------------
 ## 🔹 Step 5: Investigate Event
@@ -49,4 +49,4 @@ Identify:
 
 Result:
 - Deletion activity traced successfully ✅
-- 
+- the data event was visbile but it was in the s3 logs the data  event didnt appear in the event history
