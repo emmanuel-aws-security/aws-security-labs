@@ -12,6 +12,7 @@ CloudTrail events contain:
 
 ## 🔍 Investigation Insight
 Even destructive actions like object deletion can be traced.
+Event History ≠ full S3 object visibility
 
 ## ⚠️ Security Importance
 Without logging:
