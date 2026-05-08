@@ -1,0 +1,27 @@
+## 🔴 Likely Causes
+
+After review, the issue is not related to CLI vs Console.
+
+The most likely causes are:
+
+### 1. Incorrect Log Source
+CloudTrail Event History does NOT reliably show S3 object-level actions.
+
+Object-level logs are found in:
+- S3 log bucket (CloudTrail delivery)
+OR
+- CloudTrail Lake (if enabled)
+
+### 2. Data Events Not Properly Configured
+S3 Data Events must be explicitly enabled for:
+- the correct bucket
+- OR all buckets
+
+If misconfigured, GetObject/DeleteObject will NOT appear.
+
+### 3. Delay in Log Delivery
+CloudTrail logs are not real-time.
+There can be a delay (minutes).
+
+### 4. Region Mismatch
+If the bucket and trail are in different regions, logs may not appear as expected.
