@@ -11,7 +11,7 @@ Used Event History to search for the action.
 ### 2. Event Filtering Applied
 Filtered using:
 - Event Name
-- IAM Username
+-  Check manually for the IAM Username
 
 ### 3. Event Details Inspected
 Identified:
