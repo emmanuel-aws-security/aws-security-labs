@@ -42,6 +42,7 @@ its better than yes > /dev/null
 because we want to stress it above the 70 mark
 
 still didnt get the result so i reduced the threshold to trigger the alarm
+threshold will know trigger at 30
 
 This increases CPU usage artificially.
 
