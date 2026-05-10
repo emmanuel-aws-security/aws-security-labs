@@ -1,0 +1,1 @@
+cpu-alarm-returned-ok
