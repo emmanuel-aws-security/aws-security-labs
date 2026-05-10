@@ -6,10 +6,7 @@
 
 SSH into EC2 and generate activity:
 
-sudo systemctl status nginx
-curl http://localhost
-
-(or install nginx if needed)
+logger "CLOUDWATCH_PROOF_TEST_12345"
 
 ----------------------------------
 ## 🔹 Step 2: Open CloudWatch Logs
@@ -51,11 +48,11 @@ Check for:
 
 On EC2:
 
-sudo journalctl -u nginx
+journalctl -u amazon-cloudwatch-agent -n 50
 
 OR
 
-sudo tail -f /var/log/nginx/error.log
+tail -f /var/log/syslog
 
 ----------------------------------
 ## 🔹 Step 7: Understand Centralized Logging
