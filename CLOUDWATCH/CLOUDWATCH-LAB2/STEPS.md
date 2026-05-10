@@ -34,8 +34,12 @@ Create alarm.
 ----------------------------------
 
 Inside EC2 run:
+sudo apt update
+sudo apt install stress -y
+stress --cpu 8
 
-yes > /dev/null
+its better than yes > /dev/null
+because we want to stress it above the 70 mark
 
 This increases CPU usage artificially.
 
