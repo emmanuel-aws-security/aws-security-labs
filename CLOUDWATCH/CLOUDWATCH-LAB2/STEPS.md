@@ -34,11 +34,29 @@ Create alarm.
 ----------------------------------
 
 Inside EC2 run:
+
+
+
 sudo apt update
+
+
+
+
+
+
 sudo apt install stress -y
+
+
+
 stress --cpu 8
 
+
+
+
 its better than yes > /dev/null
+
+
+
 because we want to stress it above the 70 mark
 
 still didnt get the result so i reduced the threshold to trigger the alarm
