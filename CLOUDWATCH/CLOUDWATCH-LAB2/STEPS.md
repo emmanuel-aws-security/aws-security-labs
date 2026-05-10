@@ -1,14 +1,18 @@
 # CloudWatch Alarm Lab — Steps
 
 ----------------------------------
+
 ## 🔹 Step 1: Open CloudWatch
+
 ----------------------------------
 
 Go to:
 CloudWatch → Alarms
 
 ----------------------------------
+
 ## 🔹 Step 2: Create CPU Alarm
+
 ----------------------------------
 
 Select metric:
@@ -21,7 +25,9 @@ Evaluation:
 - consecutive monitoring periods
 
 ----------------------------------
+
 ## 🔹 Step 3: Name Alarm
+
 ----------------------------------
 
 Example:
@@ -30,42 +36,32 @@ High-CPU-Alarm
 Create alarm.
 
 ----------------------------------
+
 ## 🔹 Step 4: Trigger High CPU Usage
+
 ----------------------------------
 
 Inside EC2 run:
 
-
-
 sudo apt update
-
-
-
-
-
 
 sudo apt install stress -y
 
-
-
 stress --cpu 8
-
-
-
 
 its better than yes > /dev/null
 
-
-
 because we want to stress it above the 70 mark
 
-still didnt get the result so i reduced the threshold to trigger the alarm
+still didnt get the result so i reduced the threshold to trigger the alarm  
 threshold will know trigger at 30
 
 This increases CPU usage artificially.
 
 ----------------------------------
+
 ## 🔹 Step 5: Observe Alarm State
+
 ----------------------------------
 
 Check:
@@ -76,7 +72,9 @@ Observe:
 - ALARM
 
 ----------------------------------
+
 ## 🔹 Step 6: Stop Stress Test
+
 ----------------------------------
 
 Inside EC2:
@@ -88,7 +86,9 @@ OR
 pkill yes
 
 ----------------------------------
+
 ## 🔹 Step 7: Create Status Check Alarm
+
 ----------------------------------
 
 Create another alarm for:
@@ -98,7 +98,9 @@ Purpose:
 Detect unhealthy EC2 state.
 
 ----------------------------------
+
 ## 🔹 Step 8: Review Alarm Purpose
+
 ----------------------------------
 
 CPU Alarm:
