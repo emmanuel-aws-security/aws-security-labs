@@ -76,7 +76,7 @@ Each folder contains:
 - learnings (what was learned)
 - evidence (screenshots of results)
 
-Some folders contain:
+## Some folders contain:
 -invsetigation(the structure to troubleshooting problem)
 -fix (how i fix the problems)
 
