@@ -18,33 +18,52 @@ Examples:
 - public S3 buckets
 - excessive permissions
 
+These are not “advanced attacks” — they are simple mistakes that create real-world exposure.
+
 ---
 
-### 3. Monitoring & Logging Matter
+### 3. Purpose of This Lab (IMPORTANT)
+This entire simulation was intentionally designed to demonstrate how **attacks and failures can occur across multiple AWS layers at the same time**.
+
+It shows that:
+- one misconfiguration is not isolated
+- multiple small mistakes can combine into a full breach path
+- attackers exploit the weakest chain, not a single service
+
+This reflects how real cloud breaches happen in production environments.
+
+---
+
+### 4. Monitoring & Logging Matter
 Without:
 - CloudTrail
 - CloudWatch
-- logs
+- system logs
 
-investigation becomes difficult.
+it becomes extremely difficult to understand:
+- what happened
+- when it happened
+- how it happened
 
 ---
 
-### 4. Troubleshooting Requires Structure
+### 5. Troubleshooting Requires Structure
 Useful debugging flow:
 1. Check service
 2. Check ports
 3. Check local access
 4. Check network rules
 5. Check logs
-6. Check IAM
+6. Check IAM permissions
 
 ---
 
 ## 🧾 Final Conclusion
 This project demonstrated:
 - infrastructure deployment
-- attack simulation
-- investigation workflow
-- remediation process
-- cloud security thinking
+- multi-layer attack surface exposure
+- misconfiguration chaining across services
+- investigation workflow using logs and metrics
+- remediation and validation process
+
+It reflects how real cloud environments fail when security is not properly enforced across all layers.
