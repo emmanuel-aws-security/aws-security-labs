@@ -77,12 +77,12 @@ Each folder contains:
 - evidence (screenshots of results)
 
 Some folders contain:
-invsetigation(the structure to troubleshooting problem)
-fix (how i fix the problems)
+-invsetigation(the structure to troubleshooting problem)
+-fix (how i fix the problems)
 
 ---
 
-## 🚀 Goal
+
 
 ## 🚀 Goal
 
