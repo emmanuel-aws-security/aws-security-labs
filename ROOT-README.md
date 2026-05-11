@@ -86,4 +86,4 @@ Each folder contains:
 
 ## 🚀 Goal
 
-To demonstrate practical AWS cloud security skills through hands-on deployment, monitoring, troubleshooting, and incident investigation labs.
+To build practical experience with AWS infrastructure, security monitoring, incident investigation, and systematic troubleshooting through hands-on labs and controlled failure scenarios.
